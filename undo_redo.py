@@ -122,4 +122,47 @@ def redo_action(b):
 # --- Connect buttons and observers ---
 textarea.observe(on_text_change, names='value')
 undo_button.on_click(undo_action)
-redo_button.on_click(redo_action)
+redo_button.on_click(redo_action
+
+                     Algorithm (Step-by-Step)
+
+1. Initialize two stacks:
+
+undo_stack → to store all performed changes
+
+redo_stack → to store undone changes
+
+
+
+2. Make a Change:
+
+Push the new change onto the undo_stack
+
+Clear the redo_stack (because after new changes, redo history resets)
+
+
+
+3. Undo Action:
+
+Pop the latest change from undo_stack
+
+Push it onto redo_stack
+
+Remove that change from the current document
+
+
+
+4. Redo Action:
+
+Pop the latest change from redo_stack
+
+Push it back onto undo_stack
+
+Add it again to the document
+
+
+
+5. Display Document State:
+
+Show the current content of the document
+
